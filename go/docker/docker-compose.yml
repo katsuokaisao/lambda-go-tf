@@ -1,0 +1,10 @@
+version: "3.9"
+services:
+  lambda:
+    build:
+      context: ../
+      dockerfile: docker/Dockerfile
+    platform: linux/amd64
+    ports:
+      - "9000:8080"
+    entrypoint: ["/usr/local/bin/aws-lambda-rie"]
